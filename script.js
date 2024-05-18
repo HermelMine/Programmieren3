@@ -1,8 +1,5 @@
 class Grass {
 
-
-
-
     constructor(x, y) {
         this.x = x
         this.y = y
@@ -22,9 +19,6 @@ class Grass {
             [this.x + 1, this.y + 1],
         ]
     }
-
-
-
 
     //FindFreeCells
     findfreecells(symbol) {
@@ -307,7 +301,6 @@ class Herbivore {
 
 
 }
-
 
 
 
@@ -762,7 +755,7 @@ class ExplosiveSingingMushroom {
         let matrixwert = matrix[this.y][this.x]
         if (matrixwert === this.colourValue) {
             while (i < 9) {
-                console.log(this.song[i])
+                //console.log(this.song[i])
                 i++
             }
         }
