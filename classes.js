@@ -1,11 +1,10 @@
 class Life {
 
-    constructor(x,y,colouValue){
+    constructor(x,y){
         this.x = x
         this.y = y
         //Position
         //Colour
-        this.colouValue = colouValue
         //Count
         this.replicate = 0
         this.neighbours = [
@@ -36,7 +35,7 @@ class Life {
 }
 
 class Grass extends Life {
-    super(x,y,colouValue)
+    super(x,y)
 
     findfreecells(symbol) {
         let freecells = []

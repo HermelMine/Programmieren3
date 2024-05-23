@@ -40,10 +40,10 @@ function getrandommatrix(x,y){
  ];
  let grassArr=[];
  let herbiArr=[];
- //let carniArr=[];
- //let canniArr=[];
- //let exploArr=[];
- //let assassArr=[];
+ let carniArr=[];
+ let canniArr=[];
+ let exploArr=[];
+ let assassArr=[];
  let side= 10;
 
 
