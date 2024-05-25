@@ -1,9 +1,9 @@
-const express = require("Express");
-const app = express();
+//const express = require("Express");
+//const app = express();
 
-app.get("/", function(req, res){
-   res.send("Hello world");
-});
+//app.get("/", function(req, res){
+////   res.send("Hello world");
+//});
 
 app.listen(3000, function(){
    console.log("Example is running on port 3000");
@@ -27,8 +27,4 @@ app.use(express.static("Programmieren3"));
 
 app.get("/", function(req, res){
    res.redirect("index.html");
-});
-
-app.listen(3000, function(){
-   console.log("Example is running on port 3000");
 });

@@ -1,50 +1,16 @@
-function getrandommatrix(x,y){
-    let matrix=[]
-    for(let h = 0;h<y;h++){
-        matrix.push([])
-        for(let w=0;w<x;w++){
-           
-            matrix[h][w]=0
-            let r = random(100)
-            if(r<45){
-                matrix[h][w]=0
-            }
-            else if(r>99){
-                matrix[h][w]=4
-            }
-            else if(r>98){
-                matrix[h][w]=2
-            }
-            else if(r>96){
-                matrix[h][w]=3
-            }
-            else if(r>95){
-                matrix[h][w]=5
-            }
-            else{
-                matrix[h][w]=1
-            }
-        }
-    }
-    console.log(matrix)
-    return matrix
- }
-  let matrix = [
-    [0, 0, 1, 0, 0],
-    [1, 0, 0, 0, 0],
-    [0, 1, 0, 3, 0],
-    [0, 0, 1, 0, 0],
-    [1, 1, 0, 0, 0],
-    [1, 1, 0, 2, 0],
-    [1, 1, 0, 0, 0]
- ];
- let grassArr=[];
- let herbiArr=[];
- let carniArr=[];
- let canniArr=[];
- let exploArr=[];
- let assassArr=[];
- let side= 10;
+
+//sketch
+
+const {getrandommatrix,random,grassArr, herbiArr, carniArr, exploArr, assassArr, fr, side}= require("./contral")
+let {matrix}= require("./contral")
+const Life = require("./life")
+const Grass = require("./grass")
+console.log("import", Grass)
+
+const Herbivore = require("./herbivore")
+const Carnivore = require("./carnivore")
+const AssassinsWeed = require("./assassinsWeed")
+const ExplosiveSingingMushroom = require("./explosiveSingingMushroom")
 
 
  function draw(){
@@ -75,42 +41,50 @@ function getrandommatrix(x,y){
         for(y=0;y<matrix[x].length;y++){
            
             if(matrix[x][y]===0){
-                fill("LightSlateGrey")
+                //fill("LightSlateGrey")
+                process.stdout.write(" ")
             }
             else if(matrix[x][y]===1){
-                fill("#1F760B")
+                //fill("#1F760B")
+                process.stdout.write("1")
             }
             else if(matrix[x][y]===2){
-                fill("#FFDB00")
+                //fill("#FFDB00")
+                process.stdout.write("2")
             }
             else if(matrix[x][y]===4){
-                fill("#c81bb0")
+                //fill("#c81bb0")
+                process.stdout.write("4")
             }
             else if(matrix[x][y]===5){
-                fill("#1204b5")
+                //fill("#1204b5")
+                process.stdout.write("5")
             }
            else if(matrix[x][y]===3){
-                fill("#c8221b")
+                //fill("#c8221b")
+                process.stdout.write("3")
             }
             else if(matrix[x][y]===6){
-                fill("#b56404")
+                //fill("#b56404")
+                process.stdout.write("6")
             }
-            rect(y*side,x*side,side,side)
+            //rect(y*side,x*side,side,side)
         }
     }
  }
- let fr=3
+
+
  function setup(){
     matrix=getrandommatrix(40,40)
-    console.log(matrix)
-    createCanvas(matrix[1].length*side+1,matrix.length*side+1)
-    background("#acabaa")
-    frameRate(fr)
+    //console.log(matrix)
+    //createCanvas(matrix[1].length*side+1,matrix.length*side+1)
+    //background("#acabaa")
+    //frameRate(fr)
     for(let y=0;y<matrix.length;y++){
         for(x=0;x<matrix[y].length;x++){
             if(matrix[y][x]===1){
+                console.log(Grass)
                 let grassObj=new Grass(x,y);
-                // console.log(grassObj)
                 // console.log(grassObj.multiply)
                 grassArr.push(grassObj)
             }
@@ -131,6 +105,10 @@ function getrandommatrix(x,y){
                 exploArr.push(exploObj)
             }
         }
+        
     }
-    console.log(grassArr)
+    //console.log(grassArr)
  }
+
+setup()
+setInterval(draw,1000)

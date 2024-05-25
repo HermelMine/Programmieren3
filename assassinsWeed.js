@@ -1,12 +1,16 @@
-var life = require("./module")
-module.exports = class Grass {
+const { matrix,life,assassArr}= require("./contral")
+const {random}=require("./executive")
+module.exports = class AssassinsWeed {
+
+
+
 
     constructor(x, y) {
         this.x = x
         this.y = y
         //Position
         //Colour
-        this.colouValue = 1
+        this.colourValue = 4
         //Count
         this.replicate = 0
         this.neighbours = [
@@ -20,6 +24,9 @@ module.exports = class Grass {
             [this.x + 1, this.y + 1],
         ]
     }
+
+
+
 
     //FindFreeCells
     findfreecells(symbol) {
@@ -37,45 +44,29 @@ module.exports = class Grass {
 
 
                 }
-
-
-
-
             }
         }
         return freecells
     }
 
-
-
-
     mul() {
         this.replicate++
-        if (this.replicate >= 6) {
+        if (this.replicate >= 20) {
 
 
 
 
-            let emptyfields = this.findfreecells(0);
+            let emptyfields = this.findfreecells(1);
             if (emptyfields.length > 0) {
                 let randPos = random(emptyfields)
                 let newX = randPos[0]
                 let newY = randPos[1]
-                matrix[newY][newX] = 1;
-                //neuesGrassobjekt
-                let grassObj = new Grass(newX, newY)
-                grassArr.push(grassObj)
+                matrix[newY][newX] = 4;
+                //neuesAssasObjekt
+                let assassObj = new AssassinsWeed(newX, newY)
+                assassArr.push(assassObj)
             }
-
-
-
-
-
-
-
-
             this.replicate = 0
         }
     }
-
 }

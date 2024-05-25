@@ -1,7 +1,6 @@
+const { matrix,life, herbiArr}= require("./contral")
+const {random}=require("./executive")
 module.exports = class Herbivore {
-
-
-
 
     constructor(x, y) {
         this.x = x

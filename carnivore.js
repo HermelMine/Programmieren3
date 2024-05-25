@@ -1,7 +1,6 @@
+const { matrix,life, carniArr}= require("./contral")
+const {random}=require("./executive")
 module.exports = class Carnivore {
-
-
-
 
     constructor(x, y) {
         this.x = x
@@ -24,9 +23,6 @@ module.exports = class Carnivore {
         ]
     }
 
-
-
-
     updateNeighbours() {
         this.neighbours = [
             [this.x - 1, this.y - 1],
@@ -38,9 +34,6 @@ module.exports = class Carnivore {
             [this.x, this.y + 1],
             [this.x + 1, this.y + 1],
         ]
-
-
-
 
     }
     //FindFreeCells
@@ -56,21 +49,11 @@ module.exports = class Carnivore {
                 if (matrixwert === symbol) {
                     freecells.push(pos)
 
-
-
-
                 }
-
-
-
-
             }
         }
         return freecells
     }
-
-
-
 
     move() {
         let emptyfields = this.findfreecells(0)
@@ -84,6 +67,7 @@ module.exports = class Carnivore {
             this.x = newX
         }
     }
+
     eat() {
         let prey = this.findfreecells(2)
         if (prey.length > 0) {
@@ -103,10 +87,6 @@ module.exports = class Carnivore {
                     herbiArr.splice(i, 1)
                     break;
                 }
-
-
-
-
             }
             this.eatcounter++
             this.noteatencounter = 0

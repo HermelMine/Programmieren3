@@ -1,4 +1,6 @@
-class ExplosiveSingingMushroom {
+const { matrix,life,exploArr}= require("./contral")
+const {random}=require("./executive")
+module.exports=class ExplosiveSingingMushroom {
 
     constructor(x, y) {
         this.song = [
