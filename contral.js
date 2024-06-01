@@ -25,10 +25,10 @@ function getrandommatrix(x,y){
             if(r<45){
                 matrix[h][w]=0
             }
-            else if(r>99){
+            else if(r>98){
                 matrix[h][w]=4
             }
-            else if(r>98){
+            else if(r>97){
                 matrix[h][w]=2
             }
             else if(r>96){
@@ -46,6 +46,12 @@ function getrandommatrix(x,y){
     return matrix
  }
 
+function Mitosis{
+    let genderCount=random(2)
+    if(gendercount=)
+}
+
+
 let grassArr=[];
 let herbiArr=[];
 let carniArr=[];
@@ -53,9 +59,11 @@ let exploArr=[];
 let assassArr=[];
 let side= 10;
 let fr = 3
-let matrix=[]
+let matrix=getrandommatrix(20,20)
 
- module.exports= {
+module.exports= {matrix}
+
+module.exports= {
     grassArr: grassArr,
     herbiArr: herbiArr,
     carniArr: carniArr,
@@ -63,7 +71,7 @@ let matrix=[]
     assassArr: assassArr,
     side: side,
     fr: fr,
-    matrix: matrix,
+    matrix:matrix,
     random:random,
     getrandommatrix:getrandommatrix
 

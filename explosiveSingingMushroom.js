@@ -1,4 +1,4 @@
-const { matrix,life,exploArr}= require("./contral")
+const { matrix,life,exploArr,herbiArr}= require("./contral")
 const {random}=require("./executive")
 module.exports=class ExplosiveSingingMushroom {
 

@@ -1,10 +1,12 @@
-const { matrix,life, herbiArr}= require("./contral")
-const {random}=require("./executive")
+const { matrix,life, herbiArr,grassArr,random}= require("./contral")
 module.exports = class Herbivore {
 
-    constructor(x, y) {
+    constructor(x, y,gender) {
         this.x = x
         this.y = y
+        this.gender= {
+            let gendercount= 
+        }
         //Position
         //Colour
         this.colouValue = 2

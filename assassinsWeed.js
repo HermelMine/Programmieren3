@@ -1,9 +1,6 @@
 const { matrix,life,assassArr}= require("./contral")
-const {random}=require("./executive")
+const {random}=require("./contral")
 module.exports = class AssassinsWeed {
-
-
-
 
     constructor(x, y) {
         this.x = x

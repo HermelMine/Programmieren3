@@ -75,7 +75,7 @@ const ExplosiveSingingMushroom = require("./explosiveSingingMushroom")
 
 
  function setup(){
-    matrix=getrandommatrix(40,40)
+    //matrix=getrandommatrix(40,40)
     //console.log(matrix)
     //createCanvas(matrix[1].length*side+1,matrix.length*side+1)
     //background("#acabaa")
@@ -110,5 +110,8 @@ const ExplosiveSingingMushroom = require("./explosiveSingingMushroom")
     //console.log(grassArr)
  }
 
-setup()
-setInterval(draw,1000)
+ module.exports={
+     draw:draw,
+     setup:setup,
+     matrix:matrix
+ }
